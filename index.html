@@ -222,7 +222,8 @@
 
       // تعطيل زر الإضافة إذا تجاوز الحد
       const selectedValue = parseFloat(selectEl.value);
-      addBtn.disabled = (total + selectedValue) > limit;
+      // السماح بإضافة أي وقت
+      addBtn.disabled = false;
     }
 
     function addExcuse() {
@@ -234,10 +235,7 @@
         return;
       }
 
-      if (total + value > limit) {
-        alert(`إجمالي الاستئذانات لا يمكن أن يتجاوز ${limit} ساعات.`);
-        return;
-      }
+      
 
       logs.push(value);
       updateDisplay();
